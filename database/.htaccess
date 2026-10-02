@@ -1,0 +1,2 @@
+# Apache 2.4 (XAMPP): block direct browser access to this folder.
+Require all denied
