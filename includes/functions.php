@@ -63,14 +63,111 @@ class AppException extends Exception
 /* ------------------------------------------------------------------
  * 2. Session + base URL
  * ------------------------------------------------------------------ */
+
+/*
+ * Store PHP sessions in PostgreSQL instead of the temporary
+ * local filesystem. This is important for Vercel/serverless
+ * deployments because different requests may run on different
+ * instances.
+ */
+
+class DatabaseSessionHandler implements SessionHandlerInterface
+{
+    private ?PDO $pdo = null;
+
+    private function connection(): PDO
+    {
+        if ($this->pdo === null) {
+            $this->pdo = db();
+        }
+
+        return $this->pdo;
+    }
+
+    public function open(string $path, string $name): bool
+    {
+        return true;
+    }
+
+    public function close(): bool
+    {
+        return true;
+    }
+
+    public function read(string $id): string|false
+    {
+        $st = $this->connection()->prepare(
+            'SELECT data FROM php_sessions
+             WHERE id = ?
+               AND last_activity > ?'
+        );
+
+        $st->execute([
+            $id,
+            time() - 86400
+        ]);
+
+        $data = $st->fetchColumn();
+
+        return $data === false ? '' : (string) $data;
+    }
+
+    public function write(string $id, string $data): bool
+    {
+        $st = $this->connection()->prepare(
+            'INSERT INTO php_sessions (id, data, last_activity)
+             VALUES (?, ?, ?)
+             ON CONFLICT (id)
+             DO UPDATE SET
+                 data = EXCLUDED.data,
+                 last_activity = EXCLUDED.last_activity'
+        );
+
+        return $st->execute([
+            $id,
+            $data,
+            time()
+        ]);
+    }
+
+    public function destroy(string $id): bool
+    {
+        $st = $this->connection()->prepare(
+            'DELETE FROM php_sessions WHERE id = ?'
+        );
+
+        return $st->execute([$id]);
+    }
+
+    public function gc(int $max_lifetime): int|false
+    {
+        $st = $this->connection()->prepare(
+            'DELETE FROM php_sessions WHERE last_activity < ?'
+        );
+
+        $st->execute([
+            time() - $max_lifetime
+        ]);
+
+        return $st->rowCount();
+    }
+}
+
 if (session_status() === PHP_SESSION_NONE) {
+
+    session_set_save_handler(
+        new DatabaseSessionHandler(),
+        true
+    );
+
     session_set_cookie_params([
-    'lifetime' => 0,
-    'path'     => '/',
-    'secure'   => true,
-    'httponly' => true,
-    'samesite' => 'Lax',
-]);
+        'lifetime' => 0,
+        'path'     => '/',
+        'httponly' => true,
+        'samesite' => 'Lax',
+        'secure'   => (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off'),
+    ]);
+
     session_start();
 }
 
