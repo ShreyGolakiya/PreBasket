@@ -1,0 +1,11 @@
+FROM dunglas/frankenphp:php8.3
+
+RUN install-php-extensions pdo_pgsql
+
+WORKDIR /app
+
+COPY . /app
+
+EXPOSE 80
+
+CMD ["frankenphp", "php-server", "--root", "/app", "--listen", ":80"]
