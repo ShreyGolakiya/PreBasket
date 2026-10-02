@@ -8,4 +8,4 @@ COPY . /app
 
 EXPOSE 80
 
-CMD ["frankenphp", "php-server", "--root", "/app", "--listen", ":80"]
+CMD ["sh", "-c", "frankenphp php-server --root /app --listen :${PORT:-80}"]
