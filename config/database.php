@@ -4,7 +4,7 @@ define('DB_HOST', 'aws-0-ap-northeast-1.pooler.supabase.com');
 define('DB_PORT', '5432');
 define('DB_NAME', 'postgres');
 define('DB_USER', 'postgres.tokffzxndimbpxyojccx');
-define('DB_PASS', getenv('dYiKGY9X2.!/nGn') ?: '');
+define('DB_PASS', getenv('DB_PASS') ?: '');
 define('APP_DEBUG', false);
 
 function db(): PDO
