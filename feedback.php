@@ -74,7 +74,7 @@ require __DIR__ . '/includes/header.php';
     </nav>
 
     <div class="panel">
-        <h1 style="font-size:23px">How was your PreBasket pickup?</h1>
+        <h1 style="font-size:23px">How was your QuickCart pickup?</h1>
         <p class="muted">Order <span class="mono"><?= e($order['order_code']) ?></span>
             &middot; <?= count($items) ?> item(s) &middot; <?= money($order['total_amount']) ?></p>
 

@@ -64,7 +64,7 @@ function admin_header(string $title, string $nav): void
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?= e($title) ?> &middot; PreBasket Admin</title>
+<title><?= e($title) ?> &middot; QuickCart Admin</title>
 <link rel="icon" href="<?= url('assets/icons/favicon.svg') ?>" type="image/svg+xml">
 <link rel="stylesheet" href="<?= url('assets/css/style.css') ?>">
 <script>
@@ -77,7 +77,7 @@ var CSRF = <?= json_encode(csrf_token()) ?>;
 <aside class="admin-side" id="adminSide">
     <a class="admin-brand" href="<?= url('admin/dashboard.php') ?>">
         <?= logo_mark(30) ?>
-        <span>PreBasket<small>Admin panel</small></span>
+        <span>QuickCart<small>Admin panel</small></span>
     </a>
     <nav class="admin-nav">
         <?php foreach ($items as $key => $it): ?>

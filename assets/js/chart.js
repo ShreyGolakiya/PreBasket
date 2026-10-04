@@ -1,5 +1,5 @@
 /* =====================================================================
-   PreBasket - chart.js
+   QuickCart - chart.js
    A small HTML5 CANVAS chart written for this project.
    No chart library is used, so it works offline in XAMPP.
 

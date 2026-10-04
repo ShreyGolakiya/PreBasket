@@ -1,7 +1,7 @@
 <?php
 /*
  * index.php  -  Home page
- * Shows: hero, categories, featured products, how PreBasket works.
+ * Shows: hero, categories, featured products, how QuickCart works.
  */
 require_once __DIR__ . '/includes/functions.php';
 require_once __DIR__ . '/includes/product_card.php';
@@ -50,7 +50,7 @@ foreach ([[0, 0], [6, 0], [0, 6]] as $f) {
         <div class="hero-copy">
             <h1>Shop Before<br>You Shop.</h1>
             <p class="hero-lead">
-                Pick your groceries on PreBasket, we pack them while you get ready, and you simply
+                Pick your groceries on QuickCart, we pack them while you get ready, and you simply
                 walk in and collect. No aisles to search, no billing queue to wait in.
             </p>
             <form class="hero-search" action="<?= url('products.php') ?>" method="get" role="search">
@@ -138,7 +138,7 @@ foreach ([[0, 0], [6, 0], [0, 6]] as $f) {
 <section class="section" id="how">
     <div class="container">
         <div class="section-head">
-            <h2>How PreBasket works</h2>
+            <h2>How QuickCart works</h2>
         </div>
         <ol class="steps">
             <li>

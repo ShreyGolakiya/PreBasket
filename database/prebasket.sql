@@ -1,15 +1,15 @@
 -- =====================================================================
---  PreBasket - Smart Supermarket Pre-Order and Quick Collection System
+--  QuickCart - Smart Supermarket Pre-Order and Quick Collection System
 --  MySQL / MariaDB database  (import this file in phpMyAdmin)
 -- ---------------------------------------------------------------------
 --  Demo logins
 --     Admin     : username admin           password admin123
---     Customer  : demo@prebasket.test      password demo123
+--     Customer  : demo@quickcart.test      password demo123
 -- =====================================================================
 
-CREATE DATABASE IF NOT EXISTS prebasket
+CREATE DATABASE IF NOT EXISTS quickcart
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE prebasket;
+USE quickcart;
 
 SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS feedback;
@@ -179,8 +179,8 @@ INSERT INTO admins (admin_id, username, full_name, password_hash) VALUES
   (1, 'admin', 'Shop Owner', '$2y$12$kqtBxywk3ssMY1iDC9cpqO5v03tLLhxREkejgo0jZjsYyw2vREEf.');
 
 INSERT INTO users (user_id, name, email, phone, password_hash) VALUES
-  (1, 'Demo Customer', 'demo@prebasket.test', '9876543210', '$2y$12$16kCZcEggMS5lRcpiUlIieseBRgPWr7VvO5xTXXXgoePPlUD6meuS'),
-  (2, 'Riya Sharma', 'riya@prebasket.test', '9123456780', '$2y$12$16kCZcEggMS5lRcpiUlIieseBRgPWr7VvO5xTXXXgoePPlUD6meuS');
+  (1, 'Demo Customer', 'demo@quickcart.test', '9876543210', '$2y$12$16kCZcEggMS5lRcpiUlIieseBRgPWr7VvO5xTXXXgoePPlUD6meuS'),
+  (2, 'Riya Sharma', 'riya@quickcart.test', '9123456780', '$2y$12$16kCZcEggMS5lRcpiUlIieseBRgPWr7VvO5xTXXXgoePPlUD6meuS');
 
 INSERT INTO categories (category_id, category_name, icon) VALUES
   (1, 'Grocery', 'grocery'),

@@ -35,7 +35,7 @@ function db(): PDO
 
         } catch (PDOException $ex) {
 
-            error_log('[PreBasket] Database connection failed: ' . $ex->getMessage());
+            error_log('[QuickCart] Database connection failed: ' . $ex->getMessage());
 
             die('Database connection failed: ' . $ex->getMessage());
         }

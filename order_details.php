@@ -54,7 +54,7 @@ $stepNotes = [
     'Preparing'            => 'Staff are picking and packing your items.',
     'Ready for Collection' => 'Your parcel is packed. Come and collect it!',
     'Collected'            => 'You have collected your parcel.',
-    'Completed'            => 'Order finished. Thank you for shopping with PreBasket.',
+    'Completed'            => 'Order finished. Thank you for shopping with QuickCart.',
 ];
 
 $pageTitle = 'Order ' . $order['order_code'];

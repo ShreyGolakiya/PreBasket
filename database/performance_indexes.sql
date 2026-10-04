@@ -1,4 +1,4 @@
--- PreBasket PostgreSQL performance indexes for Supabase
+-- QuickCart PostgreSQL performance indexes for Supabase
 -- Run this ONCE in Supabase SQL Editor against the existing project database.
 -- Safe to run repeatedly because every index uses IF NOT EXISTS.
 

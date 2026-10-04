@@ -45,7 +45,7 @@ if (is_post()) {
                 $uid = (int) $ins->fetchColumn();
                 login_user(['user_id' => $uid, 'name' => $name, 'email' => $email]);
 
-                flash('success', 'Welcome to PreBasket, ' . $name . '! Your account is ready.');
+                flash('success', 'Welcome to QuickCart, ' . $name . '! Your account is ready.');
                 redirect('products.php');
             } catch (PDOException $ex) {
                 log_exception($ex);

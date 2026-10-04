@@ -76,7 +76,7 @@ require __DIR__ . '/includes/header.php';
 
     <div class="paycard">
         <div class="pc-top">
-            <span>PreBasket Demo Card</span>
+            <span>QuickCart Demo Card</span>
             <span><?= icon('shield', 18) ?></span>
         </div>
         <div class="pc-num">4242&nbsp;&nbsp;4242&nbsp;&nbsp;4242&nbsp;&nbsp;4242</div>

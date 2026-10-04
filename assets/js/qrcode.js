@@ -1,5 +1,5 @@
 /*
- * PreBasket - tiny offline QR code generator
+ * QuickCart - tiny offline QR code generator
  * ------------------------------------------
  * Written for this project so that QR codes work WITHOUT internet.
  * Supports: byte mode, error correction level M, versions 1 to 6

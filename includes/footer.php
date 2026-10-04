@@ -5,7 +5,7 @@
         <div class="footer-brand">
             <?= logo_mark(30) ?>
             <div>
-                <strong>PreBasket</strong>
+                <strong>QuickCart</strong>
                 <p>Shop before you shop. Pre-order your supermarket basket and collect it without standing in the billing queue.</p>
             </div>
         </div>
@@ -33,12 +33,12 @@
         <div class="footer-col">
             <h4>Store</h4>
             <a href="<?= url('admin/login.php') ?>">Staff login</a>
-            <span class="footer-note">PreBasket Supermarket<br>Ahmedabad, Gujarat</span>
+            <span class="footer-note">QuickCart Supermarket<br>Ahmedabad, Gujarat</span>
         </div>
     </div>
 
     <div class="container footer-bottom">
-        <span>&copy; <?= date('Y') ?> PreBasket &mdash; college web technology project.</span>
+        <span>&copy; <?= date('Y') ?> QuickCart &mdash; college web technology project.</span>
         <span>Built with HTML, CSS, JavaScript, PHP, MySQL, SVG and Canvas.</span>
     </div>
 </footer>

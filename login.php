@@ -61,7 +61,7 @@ require __DIR__ . '/includes/header.php';
         </div>
 
         <div class="demo-hint">
-            <strong>Demo account:</strong> <b>demo@prebasket.test</b> &nbsp;/&nbsp; <b>demo123</b>
+            <strong>Demo account:</strong> <b>demo@quickcart.test</b> &nbsp;/&nbsp; <b>demo123</b>
         </div>
 
         <?php if ($error): ?>
@@ -92,7 +92,7 @@ require __DIR__ . '/includes/header.php';
         </form>
 
         <p class="auth-foot">
-            New to PreBasket? <a href="<?= url('register.php') ?>">Create an account</a><br>
+            New to QuickCart? <a href="<?= url('register.php') ?>">Create an account</a><br>
             <span class="small">Shop staff? <a href="<?= url('admin/login.php') ?>">Use the admin login</a></span>
         </p>
     </div>

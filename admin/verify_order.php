@@ -52,7 +52,7 @@ if (is_post()) {
 /* ---------- look up the code that was typed ---------- */
 if ($code !== '') {
     if (!valid_order_code($code)) {
-        $error = 'That does not look like a PreBasket Order ID. It should look like PB' . date('Ymd') . '0001.';
+        $error = 'That does not look like a QuickCart Order ID. It should look like PB' . date('Ymd') . '0001.';
     } else {
         $order = find_order($pdo, $code);
         if (!$order) {

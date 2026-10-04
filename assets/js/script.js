@@ -1,5 +1,5 @@
 /* =====================================================================
-   PreBasket - script.js
+   QuickCart - script.js
    All the small pieces of JavaScript used by the website:
      1  menu + flash messages          5  live search, filter and sort
      2  quantity boxes                 6  form validation

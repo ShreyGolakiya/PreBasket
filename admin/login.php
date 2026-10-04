@@ -39,7 +39,7 @@ if (is_post()) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Staff login &middot; PreBasket Admin</title>
+<title>Staff login &middot; QuickCart Admin</title>
 <link rel="icon" href="<?= url('assets/icons/favicon.svg') ?>" type="image/svg+xml">
 <link rel="stylesheet" href="<?= url('assets/css/style.css') ?>">
 <script>

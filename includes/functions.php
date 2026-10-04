@@ -30,7 +30,7 @@ function show_fatal_page(string $title, string $detailHtml = ''): void
         header('Content-Type: text/html; charset=utf-8');
     }
     echo '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
-       . '<title>PreBasket - Error</title>'
+       . '<title>QuickCart - Error</title>'
        . '<style>body{font-family:Segoe UI,Arial,sans-serif;background:#f4f7f5;color:#17231d;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0}'
        . '.box{background:#fff;border:1px solid #dfe7e2;border-radius:16px;padding:32px;max-width:520px;margin:16px}'
        . 'h1{font-size:22px;margin:0 0 10px;color:#0f6b4a}p{line-height:1.6;color:#5f6f66}a{color:#0f6b4a;font-weight:600}</style></head><body>'
@@ -42,7 +42,7 @@ function show_fatal_page(string $title, string $detailHtml = ''): void
 /** Writes an exception to logs/error.log */
 function log_exception(Throwable $ex): void
 {
-    error_log('[PreBasket] ' . get_class($ex) . ': ' . $ex->getMessage()
+    error_log('[QuickCart] ' . get_class($ex) . ': ' . $ex->getMessage()
         . ' in ' . $ex->getFile() . ':' . $ex->getLine());
 }
 
@@ -171,7 +171,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-/** Works out the folder of the project (e.g. /PreBasket) automatically. */
+/** Works out the folder of the project (e.g. /QuickCart) automatically. */
 function compute_base_url(): string
 {
     $docRoot = str_replace('\\', '/', (string) realpath($_SERVER['DOCUMENT_ROOT'] ?? ''));
@@ -179,7 +179,7 @@ function compute_base_url(): string
     if ($docRoot !== '' && $root !== '' && stripos($root, $docRoot) === 0) {
         return rtrim(substr($root, strlen($docRoot)), '/');
     }
-    return '/PreBasket';
+    return '/QuickCart';
 }
 define('BASE_URL', compute_base_url());
 

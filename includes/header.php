@@ -7,7 +7,7 @@
 if (!function_exists('e')) {
     require_once __DIR__ . '/functions.php';
 }
-$pageTitle = $pageTitle ?? 'PreBasket';
+$pageTitle = $pageTitle ?? 'QuickCart';
 $activeNav = $activeNav ?? '';
 $cartCount = cart_count();
 ?>
@@ -16,8 +16,8 @@ $cartCount = cart_count();
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?= e($pageTitle) ?> &middot; PreBasket</title>
-<meta name="description" content="PreBasket - pre-order your supermarket shopping and collect it without waiting in the billing queue.">
+<title><?= e($pageTitle) ?> &middot; QuickCart  </title>
+<meta name="description" content="QuickCart - Smart Supermarket Order and Pickup System. waiting in the billing queue.">
 <link rel="icon" href="<?= url('assets/icons/favicon.svg') ?>" type="image/svg+xml">
 <link rel="stylesheet" href="<?= url('assets/css/style.css') ?>">
 <script>
@@ -32,7 +32,7 @@ var CSRF = <?= json_encode(csrf_token()) ?>;
     <div class="container header-inner">
         <a class="brand" href="<?= url('index.php') ?>">
             <?= logo_mark(34) ?>
-            <span class="brand-text">Pre<span>Basket</span></span>
+            <span class="brand-text">Quick<span>Cart</span></span>
         </a>
 
         <form class="header-search" action="<?= url('products.php') ?>" method="get" role="search">

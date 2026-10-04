@@ -88,7 +88,7 @@ require __DIR__ . '/includes/header.php';
                     <div class="mini-line"><span>Name</span><span><strong><?= e($user['name']) ?></strong></span></div>
                     <div class="mini-line"><span>Phone</span><span><?= e($user['phone']) ?></span></div>
                     <div class="mini-line"><span>Email</span><span><?= e($user['email']) ?></span></div>
-                    <div class="mini-line"><span>Collect from</span><span>PreBasket Supermarket &mdash; Counter 2</span></div>
+                    <div class="mini-line"><span>Collect from</span><span>QuickCart Supermarket &mdash; Counter 2</span></div>
                     <p class="small muted" style="margin:12px 0 0">
                         <?= icon('alert', 14) ?> Show your Order ID or QR code at the counter to collect your parcel.
                     </p>
