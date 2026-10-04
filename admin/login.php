@@ -51,7 +51,7 @@ var CSRF = <?= json_encode(csrf_token()) ?>;
 
 <div class="container auth-wrap" style="min-height:100vh">
     <div class="auth-card">
-        <a class="brand" href="<?= url('index.php') ?>"><?= logo_mark(34) ?><span class="brand-text">Pre<span>Basket</span></span></a>
+        <a class="brand" href="<?= url('index.php') ?>"><?= logo_mark(34) ?><span class="brand-text">Quick<span>Cart</span></span></a>
 
         <div class="auth-head">
             <h1>Staff / Admin login</h1>
