@@ -189,7 +189,7 @@ admin_header('Order ' . $order['order_code'], 'orders');
             <?php if ($status === 'Ready for Collection'): ?>
                 <div class="free-note" style="text-align:left;margin-top:12px">
                     <?= icon('scan', 16) ?>
-                    <span>Waiting for the customer. Use <a href="<?= url('admin/verify_order.php?code=' . urlencode($code)) ?>">Verify &amp; Collect</a>
+                    <span>Waiting for the customer. Use <a href="<?= url('admin/verify_order.php?code=' . urlencode($code)) ?>">Verify & Collect</a>
                           when they arrive.</span>
                 </div>
             <?php endif; ?>

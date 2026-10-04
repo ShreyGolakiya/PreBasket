@@ -70,7 +70,7 @@ $ready = $pdo->query(
       ORDER BY o.updated_at ASC LIMIT 12"
 )->fetchAll();
 
-admin_header('Verify &amp; Collect', 'verify');
+admin_header('Verify & Collect', 'verify');
 ?>
 
 <div class="admin-grid">

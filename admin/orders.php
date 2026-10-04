@@ -84,7 +84,7 @@ admin_header('Order Management', 'orders');
         <button type="submit" class="btn btn-ghost btn-sm"><?= icon('search', 15) ?> Search</button>
         <?php if ($q !== ''): ?><a class="btn btn-ghost btn-sm" href="<?= url('admin/orders.php') ?>">Clear</a><?php endif; ?>
     </form>
-    <a class="btn btn-accent" href="<?= url('admin/verify_order.php') ?>"><?= icon('scan', 16) ?> Verify &amp; collect</a>
+    <a class="btn btn-accent" href="<?= url('admin/verify_order.php') ?>"><?= icon('scan', 16) ?> Verify & collect</a>
 </div>
 
 <div class="chip-row">
