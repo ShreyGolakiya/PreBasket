@@ -343,20 +343,46 @@ function is_admin_logged_in(): bool
     return !empty($_SESSION['admin_id']);
 }
 
-/* ------------------------------------------------------------------
- * 7. Products
- * ------------------------------------------------------------------ */
-/** URL of a product image; falls back to the placeholder picture. */
+/**
+ * URL of a product image.
+ *
+ * Sample SVG images are still loaded from QuickCart.
+ * Uploaded JPG/PNG/WEBP/GIF images are loaded from
+ * Supabase Storage.
+ */
 function product_image(?string $file): string
 {
     $file = basename((string) $file);
-    $dir  = __DIR__ . '/../assets/images/products/';
-    if ($file === '' || !is_file($dir . $file)) {
+
+    if ($file === '') {
         $file = 'placeholder.svg';
     }
+
+    /*
+     * The original sample images are SVG files included
+     * with the project. Keep serving those locally.
+     */
+    if (strtolower(substr($file, -4)) === '.svg') {
+        return url('assets/images/products/' . rawurlencode($file));
+    }
+
+    /*
+     * Uploaded product images are stored permanently
+     * in Supabase Storage.
+     */
+    $supabaseUrl = rtrim((string) getenv('SUPABASE_URL'), '/');
+
+    if ($supabaseUrl !== '') {
+        return $supabaseUrl
+            . '/storage/v1/object/public/product-images/'
+            . rawurlencode($file);
+    }
+
+    /*
+     * Local fallback for localhost development.
+     */
     return url('assets/images/products/' . rawurlencode($file));
 }
-
 function discount_percent($price, $oldPrice): int
 {
     if ($oldPrice !== null && (float) $oldPrice > (float) $price && (float) $oldPrice > 0) {
