@@ -35,12 +35,6 @@ var CSRF = <?= json_encode(csrf_token()) ?>;
             <span class="brand-text">Quick<span>Cart</span></span>
         </a>
 
-        <form class="header-search" action="<?= url('products.php') ?>" method="get" role="search">
-            <?= icon('search', 18) ?>
-            <input type="search" name="q" placeholder="Search products&hellip;" aria-label="Search products"
-                   maxlength="60" value="<?= e(get_str('q')) ?>">
-        </form>
-
         <button class="nav-toggle" type="button" id="navToggle" aria-label="Open menu" aria-expanded="false">
             <?= icon('menu', 24) ?>
         </button>
