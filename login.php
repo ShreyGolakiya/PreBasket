@@ -53,7 +53,7 @@ require __DIR__ . '/includes/header.php';
 
 <div class="container auth-wrap">
     <div class="auth-card">
-        <a class="brand" href="<?= url('index.php') ?>"><?= logo_mark(34) ?><span class="brand-text">Pre<span>Basket</span></span></a>
+        <a class="brand" href="<?= url('index.php') ?>"><?= logo_mark(34) ?><span class="brand-text">Quick<span>Cart</span></span></a>
 
         <div class="auth-head">
             <h1>Welcome back</h1>
